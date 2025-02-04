@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="alc_stopped">ALC jest zatrzymane</string>
+    <string name="unknown_title">Nieznany Tytuł</string>
+    <string name="unknown_artist">Nieznany Wykonawca</string>
+</resources>

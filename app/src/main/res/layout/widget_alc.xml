@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal"
+    android:id="@+id/notif_layout"
+    android:background="@color/controlBackgroundColor">
+
+    <ImageButton
+        android:id="@+id/widget_alc_image"
+        android:scaleX="0.75"
+        android:scaleY="0.75"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/alc_logo_foreground"
+        android:background="@color/invisible"
+        android:foregroundTint="@color/iconsColor" />
+
+    <TextView
+        android:id="@+id/widget_filename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="9dp"
+        android:layout_toEndOf="@+id/widget_alc_image"
+        android:singleLine="true"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="@color/iconsColor"
+        android:text="@string/alc_stopped" />
+
+    <TextView
+        android:id="@+id/widget_artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/widget_alc_image"
+        android:layout_toStartOf="@id/widget_button_prev"
+        android:singleLine="true"
+        android:textSize="13sp"
+        android:textColor="@color/iconsColor"
+        android:layout_below="@+id/widget_filename"
+        android:text="-" />
+
+    <TextView
+        android:id="@+id/widget_songtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/widget_alc_image"
+        android:layout_toStartOf="@id/widget_button_prev"
+        android:layout_below="@+id/widget_artist"
+        android:singleLine="true"
+        android:textSize="13sp"
+        android:textColor="@color/iconsColor"
+        android:text="-" />
+
+    <ImageButton
+        android:id="@+id/widget_button_prev"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:padding="12dp"
+        android:layout_marginVertical="12dp"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/vector_notif_prevsong"
+        android:background="@color/invisible"
+        android:foregroundTint="@color/iconsColor"
+        android:layout_toStartOf="@id/widget_button_pauseresume"/>
+
+    <ImageButton
+        android:id="@+id/widget_button_pauseresume"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:padding="12dp"
+        android:layout_marginVertical="12dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/controlBackgroundColor"
+        android:src="@drawable/ic_baseline_play_circle_outline_24"
+        android:foregroundTint="@color/iconsColor"
+        android:layout_toStartOf="@+id/widget_button_next"/>
+
+    <ImageButton
+        android:id="@+id/widget_button_next"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:padding="12dp"
+        android:layout_marginVertical="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/vector_notif_nextsong"
+        android:foregroundTint="@color/iconsColor"
+        android:background="@color/invisible"
+        android:layout_alignParentEnd="true"/>
+</RelativeLayout>

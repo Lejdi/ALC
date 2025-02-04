@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="logoColor">#d6f5d6</color>
+
+    <color name="colorPrimary">#47d147</color>
+    <color name="colorPrimaryDark">#29a329</color>
+    <color name="colorAccent">#29a329</color>
+
+    <color name="activityBackgroundColor">#eafaea</color>
+    <color name="controlBackgroundColor">#d6f5d6</color>
+    <color name="buttonsColor">#29a329</color>
+    <color name="otherButtonsColor">#47d147</color>
+
+    <color name="fabIconColor">#d6f5d6</color>
+    <color name="dialogBackgroundColor">#eafaea</color>
+    <color name="dialogButtonsColor">#29a329</color>
+
+    <color name="iconsColor">#000</color>
+    <color name="textColor">#777</color>
+
+    <color name="red">#f00</color>
+</resources>

@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">ALC</string>
+    <string name="nav_to_playlists">Playlisty</string>
+    <string name="playlist_name">Nazwa Playlisty</string>
+    <string name="playlists_already_exists">%s już istnieje.</string>
+    <string name="deleted">Usunięto %s.</string>
+    <string name="default_playlist">Domyślna</string>
+    <string name="cancel">ANULUJ</string>
+    <string name="add">DODAJ</string>
+    <string name="unknown_title">Nieznany Tytuł</string>
+    <string name="unknown_artist">Nieznany Wykonawca</string>
+
+    <string name="ok">Ok</string>
+    <string name="on">Wł.</string>
+    <string name="off">Wył.</string>
+    <string name="auto">Auto</string>
+
+    <string name="dark_mode">Tryb nocny</string>
+    <string name="report_issue">Zgłoś problem</string>
+    <string name="version">Wersja:</string>
+    <string name="voice_assistant">Asystent Głosowy</string>
+
+    <string name="assistant_dialog_title">O Asystencie</string>
+    <string name="assistant_dialog_text">
+        Asystent Głosowy pozwala na kontrolowanie odtwarzacza ALC przy pomocy komend głosowych. \n\n
+        Twoja asystentka - Alice - zacznie słuchać twoich komend kiedy powiesz \"Ok Alice\". \n\n
+        Dostępne komendy, które Alice rozumie to: \n \"Next\" \n \"Back\" \n \"Start\" \n \"Stop\"
+    </string>
+
+    <string name="permission_dialog_title">Wymagane uprawnienia</string>
+    <string name="permission_dialog_text">Aby zacząć korzystać z asystenta, musisz pozwolić ALC na wykorzystanie mikrofonu</string>
+
+    <string name="email_app_error">Nie znaleziono aplikacji do wysyłania emaili. Aby uzyskać pomoc napisz na lejdi.alc@gmail.com</string>
+</resources>

@@ -1,0 +1,4 @@
+-keep class pl.lejdi.alcmusicplayer.** {*;}
+-keep class pl.lejdi.filebrowserfragment.**{*;}
+-keep class com.orhanobut.**{*;}
+-keep class pl.lejdi.alc.**{*;}

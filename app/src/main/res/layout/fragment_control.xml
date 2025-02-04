@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/control_fragment"
+    android:background="@drawable/control_background">
+
+    <TextView
+        android:id="@+id/current_song_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/current_progress"
+        app:layout_constraintEnd_toStartOf="@id/song_duration"
+        android:textSize="16sp"
+        android:textColor="@color/textColor"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:text="@string/alc_stopped"
+        tools:text="Smokie - Living Next Door to Alice"/>
+
+    <TextView
+        android:id="@+id/current_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/song_progress"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="12sp"
+        android:textColor="@color/textColor"
+        android:layout_marginStart="10dp"
+        android:text="0:00"
+        tools:text="13:07"/>
+
+    <TextView
+        android:id="@+id/song_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/song_progress"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="12sp"
+        android:textColor="@color/textColor"
+        android:layout_marginEnd="10dp"
+        android:text="0:00"
+        tools:text="16:18"/>
+
+    <SeekBar
+        android:id="@+id/song_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/current_song_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp" />
+
+    <ImageButton
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="36dp"
+        app:layout_constraintEnd_toStartOf="@id/control_buttons_container"
+        app:layout_constraintTop_toTopOf="@id/control_buttons_container"
+        app:layout_constraintBottom_toBottomOf="@id/control_buttons_container"
+        android:id="@+id/change_playlist_button"
+        android:src="@drawable/playlists_icon"
+        app:tint="@color/iconsColor"
+        android:background="?attr/selectableItemBackgroundBorderless"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/control_buttons_container"
+        app:layout_constraintTop_toBottomOf="@id/song_progress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginVertical="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/control_buttons_background">
+
+        <Button
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:id="@+id/prev_button"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:foreground="@drawable/ic_baseline_fast_rewind_24"
+            app:tint="@color/iconsColor"
+            android:layout_marginHorizontal="5dp"
+            />
+
+        <ImageButton
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:scaleType="fitCenter"
+            android:id="@+id/resume_pause_button"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_baseline_play_circle_outline_24"
+            app:tint="@color/iconsColor"
+            android:layout_marginHorizontal="5dp"
+            />
+
+        <Button
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:id="@+id/next_button"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:foreground="@drawable/ic_baseline_fast_forward_24"
+            app:tint="@color/iconsColor"
+            android:layout_marginHorizontal="5dp"
+            />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@id/control_buttons_container"
+        app:layout_constraintTop_toTopOf="@id/control_buttons_container"
+        app:layout_constraintBottom_toBottomOf="@id/control_buttons_container"
+        android:id="@+id/change_mode_button"
+        android:src="@drawable/unblocked_dice"
+        app:tint="@color/iconsColor"
+        android:background="?attr/selectableItemBackgroundBorderless"/>
+
+    <ImageButton
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@id/change_mode_button"
+        app:layout_constraintTop_toTopOf="@id/control_buttons_container"
+        app:layout_constraintBottom_toBottomOf="@id/control_buttons_container"
+        android:id="@+id/settings_button"
+        android:src="@drawable/ic_baseline_settings_24"
+        app:tint="@color/iconsColor"
+        android:background="?attr/selectableItemBackgroundBorderless"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,4 @@
+include ':FilesystemFragment'
+include ':ALCMusicPlayer'
+include ':app'
+rootProject.name = "ALC"

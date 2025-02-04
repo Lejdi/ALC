@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/songs_list_item"
+    android:paddingHorizontal="15dp"
+    android:paddingVertical="5dp"
+    android:background="?attr/selectableItemBackground">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/file_name"
+        android:textSize="16sp"
+        android:textColor="@color/iconsColor"
+        android:textStyle="bold"
+        tools:text="Smokie - Living Next Door to Alice"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/file_name"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/artist"
+        android:textStyle="italic"
+        android:textColor="@color/iconsColor"
+        android:layout_margin="5dp"
+        tools:text="Smokie"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/artist"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/title"
+        android:textStyle="italic"
+        android:textColor="@color/iconsColor"
+        android:layout_margin="5dp"
+        tools:text="Living Next Door to Alice"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/file_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/iconsColor"
+        android:id="@+id/duration"
+        tools:text="13:07"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

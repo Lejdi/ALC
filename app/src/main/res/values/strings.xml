@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">ALC</string>
+    <string name="nav_to_playlists">Playlists</string>
+    <string name="playlist_name">Playlist Name</string>
+    <string name="playlists_already_exists">%s already exists.</string>
+    <string name="deleted">%s deleted.</string>
+    <string name="default_playlist">Default</string>
+    <string name="cancel">CANCEL</string>
+    <string name="add">ADD</string>
+    <string name="unknown_title">Unknown Title</string>
+    <string name="unknown_artist">Unknown Artist</string>
+
+    <string name="ok">OK</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="auto">Auto</string>
+
+    <string name="dark_mode">Dark Mode</string>
+    <string name="report_issue">Report issue</string>
+    <string name="version">Version:</string>
+    <string name="voice_assistant">Voice Assistant</string>
+
+    <string name="assistant_dialog_title">About Assistant</string>
+    <string name="assistant_dialog_text">
+        Voice Assistant enables you to control ALC playback using voice commands. \n\n
+        Your assistant - Alice - will listen to your commands after you say \"OK Alice\". \n\n
+        Available commands which Alice understands are: \n \"Next\" \n \"Back\" \n \"Start\" \n \"Stop\"
+    </string>
+
+    <string name="permission_dialog_title">Permission required</string>
+    <string name="permission_dialog_text">In order to start using assistant, allow ALC to use your microphone</string>
+
+    <string name="email_app_error">Could not find email app. To get support write email to lejdi.alc@gmail.com</string>
+</resources>

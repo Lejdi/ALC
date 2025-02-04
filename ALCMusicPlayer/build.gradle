@@ -1,0 +1,111 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+
+android {
+    compileSdk 35
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 35
+
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled false
+        }
+        qa {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+    }
+    kotlinOptions {
+        jvmTarget = "21"
+    }
+    buildFeatures {
+        mlModelBinding true
+    }
+    namespace 'pl.lejdi.alcmusicplayer'
+}
+
+def githubProperties = new Properties()
+githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
+repositories {
+    maven {
+        name = "GitHubPackages"
+        url = uri("https://maven.pkg.github.com/Lejdi/FileBrowser")
+        credentials {
+            username = githubProperties['gpr.usr']
+            password = githubProperties['gpr.key']
+        }
+    }
+}
+
+
+apply plugin: 'maven-publish'
+
+def getVersionName = { ->
+    return "1.0.2"
+}
+
+def getArtificatId = { ->
+    return "alc"
+}
+
+publishing {
+    publications {
+        bar(MavenPublication) {
+            groupId 'pl.lejdi.alc'
+            artifactId getArtificatId()
+            version getVersionName()
+            artifact("$buildDir/outputs/aar/alcmusicplayer-release.aar")
+        }
+    }
+
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/Lejdi/ALC-library")
+            credentials {
+                username = githubProperties['gpr.usr']
+                password = githubProperties['gpr.key']
+            }
+        }
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.core:core-ktx:1.15.0'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+
+    //hawk
+    implementation "com.orhanobut:hawk:2.0.1"
+
+    //local broadcast
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
+
+    //coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.8.7"
+
+    //lifecycle service
+    implementation "androidx.lifecycle:lifecycle-service:2.8.7"
+
+    //tensorflow
+    implementation 'org.tensorflow:tensorflow-lite:2.7.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.3.0'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.3.0'
+    implementation 'org.tensorflow:tensorflow-lite-task-audio:0.3.0'
+}
