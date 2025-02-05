@@ -483,12 +483,12 @@ class MusicService : Service(), LifecycleOwner {
 
         //if something was played before, it is current song now, else simply play next
         if (playedSongsList.isNotEmpty()) {
-            currentlyPlayed = playedSongsList.removeLast()
+            currentlyPlayed = playedSongsList.removeAt(playedSongsList.lastIndex)
             playFile(currentlyPlayed!!)
             nextSongSemaphore = false
         } else {
             if (mode == Mode.ALPHABETICAL) {
-                currentlyPlayed = queue.removeLast()
+                currentlyPlayed = queue.removeAt(playedSongsList.lastIndex)
                 playFile(currentlyPlayed!!)
             } else {
                 nextSongSemaphore = false
