@@ -1,9 +1,25 @@
 # ALC
 Music player for Android OS (library and app)
 
+## TL;DR
+Brief description of the project - more detailed info about libraries and application below.  
+
+The project contains three modules: ALCMusicPlayer library, FilesystemFragment library and ALC application.  
+ - ALCMusicPlayer is a library that provides controls for media playback. Additionally the library has built in offline voice assistant for controlling playback. 
+ - FilesystemFragment provides simple way to navigate through Android filesystem and select desired files.  
+ - ALC application in standalone Android application that takes advantage of ALCMusicPlayer and FilesystemFragment modules. It provides UI for playing music and the widget for controlling playback outside the application.  
+
 ## Library
 
 Library provides simple way to implement music player service in application. The features include setting entire playlist, changing playback mode and handling external actions such as unplug headphone, incoming phone call or handle physical media buttons on headphones or bluetooth devices.
+
+## Voice assistant
+The voice assistant recognizes commands for controlling playback: 
+ - `OK Alice` - for initializing listening to commands
+ - `Next` - play next song
+ - `Start` - resume playback
+ - `Stop` - pause playback
+ - `Back` - play previos song
 
 ## Requirements
 - sdk Version 28
@@ -156,4 +172,4 @@ Toolbar provides a menu with an option for clearing the entire list of saved fil
 #### Widget
 
 Widget allow to use ALC even when application is closed. However, it used the application's playlist, so it has to be set in advance.  
-Widget looks the same as the default notification. That means: it displays currentyl played file name, song's title and author. Playback can be controlled with previous, pause or resume and next buttons.
+Widget looks the same as the default notification. That means: it displays currently played file name, song's title and author. Playback can be controlled with previous, pause or resume and next buttons.
