@@ -2,6 +2,7 @@ package pl.lejdi.alc
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.ExperimentalMaterialApi
@@ -53,58 +54,42 @@ class MainActivity : AppCompatActivity(),
             .commit()
     }
 
+    private fun getRequestedPermissions(): Array<String> {
+        val result = arrayListOf<String>()
+        result.add(Manifest.permission.READ_PHONE_STATE)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+                result.add(Manifest.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK)
+            }
+            else{
+                result.add(Manifest.permission.FOREGROUND_SERVICE)
+            }
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            result.add(Manifest.permission.READ_MEDIA_AUDIO)
+        }
+        else {
+            result.add(Manifest.permission.READ_EXTERNAL_STORAGE)
+            result.add(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        }
+        return result.toTypedArray()
+    }
+
     //check if all required permissions are granted
     private fun checkPermissions() {
-        if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                this,
-                arrayOf(
-                    Manifest.permission.READ_EXTERNAL_STORAGE,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.FOREGROUND_SERVICE,
-                    Manifest.permission.READ_PHONE_STATE,
-                ),
-                1
-            )
-        }
-        if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                this,
-                arrayOf(
-                    Manifest.permission.READ_EXTERNAL_STORAGE,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.FOREGROUND_SERVICE,
-                    Manifest.permission.READ_PHONE_STATE,
-                ),
-                1
-            )
-        }
-        if (checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                this,
-                arrayOf(
-                    Manifest.permission.READ_EXTERNAL_STORAGE,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.FOREGROUND_SERVICE,
-                    Manifest.permission.READ_PHONE_STATE,
-                ),
-                1
-            )
-        }
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
-            if (checkSelfPermission(Manifest.permission.FOREGROUND_SERVICE) != PackageManager.PERMISSION_GRANTED) {
+        val permissions = getRequestedPermissions()
+        println("==============================================================================")
+        permissions.forEach { permission ->
+            println("$permission: ${checkSelfPermission(permission)}")
+            if (checkSelfPermission(permission) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(
                     this,
-                    arrayOf(
-                        Manifest.permission.READ_EXTERNAL_STORAGE,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        Manifest.permission.FOREGROUND_SERVICE,
-                        Manifest.permission.READ_PHONE_STATE,
-                    ),
+                    permissions,
                     1
                 )
             }
         }
+        println("==============================================================================")
     }
 
     //implementation of messages to control interface - setting playlist
